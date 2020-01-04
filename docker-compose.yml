@@ -1,0 +1,41 @@
+version: '3'
+     
+services:
+  web:
+     build: './web'
+     container_name: web-c
+     restart: always
+     volumes:
+        - ./web:/src
+     expose:
+        - 3000
+
+  tensorflow:
+      build: './tensorflow'
+      container_name: tensorflow-c
+      expose:
+         - 8501
+      volumes:
+         - ./tensorflow/generator:/models/model
+
+  flask:
+      build: './flask'
+      container_name: flask-c
+      restart: always
+      volumes:
+         - ./flask:/api
+      expose:
+         - 8080
+
+  nginx:
+    build: './nginx'
+    container_name: nginx-c
+    restart: always
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - flask
+      - web
+      - tensorflow

@@ -1,0 +1,9 @@
+**/node_modules
+**/venv
+
+.git
+.gitignore
+.DS_Store
+*.afdesign
+
+README.md

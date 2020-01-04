@@ -1,0 +1,1 @@
+docker run -p 8501:8501 --mount type=bind,source=/Users/andrejvrtanoski/COURSEWORK/tensorflow/models/generator,target=/models/model --mount type=bind,source=/Users/andrejvrtanoski/COURSEWORK/tensorflow/config/model_config,target=/models/models.config -e MODEL_NAME=model -t tensorflow/serving --model_config_file=/models/models.config
