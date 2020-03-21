@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import hljs from 'highlight.js';
 import * as req from '../export';
 
 class Home extends Component {
   codeString = JSON.stringify(req, null, 2);
+
+  componentDidMount() {
+    hljs.initHighlighting.called = false;
+    hljs.initHighlighting();
+  }
 
   render() {
     return (
@@ -15,7 +21,7 @@ class Home extends Component {
           <p>Generic Text</p>
 
           <pre>
-            <code className="json">{this.codeString}</code>
+            <code className="hljs json">{this.codeString}</code>
           </pre>
         </section>
         <h1>Current Version</h1>
@@ -87,4 +93,5 @@ class Home extends Component {
     );
   }
 }
+
 export default Home;

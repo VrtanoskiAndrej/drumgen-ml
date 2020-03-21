@@ -1,29 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Slider from './Slider/Slider';
 
-class SliderGrid extends Component {
-  size = 8;
+function SliderGrid(props) {
+  const size = props.size || 8;
+  const grid = Array(size)
+    .fill(0)
+    .map((row, index) => (
+      <Slider
+        key={index.toString()}
+        id={index}
+        min={-1}
+        max={1}
+        value={props.gridValues[index]}
+        changeHandler={e => props.updateHandler(index, e)}
+      />
+    ));
 
-  constructor(props) {
-    super(props);
-    this.state = { gridValues: Array(this.size).fill(0) };
-  }
-
-  componentDidUpdate(prevProps) {
-    console.log('UPDATE');
-    if (this.props.gridValues !== prevProps.gridValues) {
-      console.log(this.props.gridValue);
-    }
-  }
-
-  render() {
-    const size = this.props.size || 8;
-    const grid = Array(size)
-      .fill(0)
-      .map((row, index) => <Slider key={index} index={index} />);
-
-    return <div className={this.props.className}>{grid}</div>;
-  }
+  return <div className={props.className}>{grid}</div>;
 }
 
 export default SliderGrid;

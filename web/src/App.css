@@ -5,19 +5,49 @@
    box-sizing: border-box;
    padding: 0;
    margin: 0;
+   -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+   -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+   outline: none !important;
 }
 
 .container {
    max-width: 1100px;
 }
 
-h1 {
+
+.wrap {
+   word-wrap: break-word;
+}
+
+h1{
    font-size: 28px;
    font-weight: bold;
 }
 
-h2 {
+h2{
    font-size: 21px;
+}
+
+h3 {
+   font-size: 14px;
+}
+
+a:link{color:inherit;}
+
+.icon {
+   color: black;
+   border:none;
+   text-decoration: none;
+   font-size: 21px;
+   cursor: pointer;
+   line-height: 1.15;
+}
+
+.icon:hover{
+   text-decoration: none;
+   color: #d3d3d3;
+   outline:none;
+   border:none;
 }
 
 pre {
@@ -32,6 +62,11 @@ pre {
    color: #ffffff!important;
 }
 
+.tabs {
+   font-family: monospace;
+   white-space: pre-line;
+}
+
 .header {
    background-color: #343A40;
 }
@@ -40,9 +75,17 @@ pre {
    border-bottom: 1px solid #343A40;
 }
 
+.rotateimg90 {
+   -webkit-transform:rotate(90deg);
+   -moz-transform: rotate(90deg);
+   -ms-transform: rotate(90deg);
+   -o-transform: rotate(90deg);
+   transform: rotate(90deg);
+}
+
 input[type="range"]{
    -webkit-appearance: none;
-   width: 80%;
+   /*width: 88%;*/
    height: 15px;
    margin-top: 10px;
    margin-bottom: 10px;
@@ -81,88 +124,13 @@ input[type="range"]::-moz-range-thumb {
    background: #dc3645;
 }
 
-/* Dracula Theme v1.2.5
- *
- * https://github.com/dracula/highlightjs
- *
- * Copyright 2016-present, All rights reserved
- *
- * Code licensed under the MIT license
- *
- * @author Denis Ciccale <dciccale@gmail.com>
- * @author Zeno Rocha <hi@zenorocha.com>
- */
-
-pre > code > span{
-   font-family: "Menlo", monospace !important;
+.settings input[type="range"]{
+   margin: 0;
 }
 
-.hljs {
-   display: block;
-   overflow-x: auto;
-   padding: 1em;
-   background: #343A40;
+.settings input[type="range"]::-webkit-slider-thumb {
+   background: #727272;
 }
-
-.hljs-built_in,
-.hljs-selector-tag,
-.hljs-section,
-.hljs-link {
-   color: #8be9fd;
+.settings input[type="range"]::-moz-range-thumb {
+   background: #727272;
 }
-
-.hljs-keyword {
-   color: #ff79c6;
-}
-
-.hljs,
-.hljs-subst {
-   color: #f8f8f2;
-}
-
-.hljs-title {
-   color: #50fa7b;
-}
-
-.hljs-string,
-.hljs-meta,
-.hljs-name,
-.hljs-type,
-.hljs-attr,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition,
-.hljs-variable,
-.hljs-template-tag,
-.hljs-template-variable {
-   color: #f1fa8c;
-}
-
-.hljs-comment,
-.hljs-quote,
-.hljs-deletion {
-   color: #6272a4;
-}
-
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-literal,
-.hljs-title,
-.hljs-section,
-.hljs-doctag,
-.hljs-type,
-.hljs-name,
-.hljs-strong {
-   font-weight: bold;
-}
-
-.hljs-literal,
-.hljs-number {
-   color: #bd93f9;
-
-}
-
-.hljs-emphasis {
-   font-style: italic;
-}
-

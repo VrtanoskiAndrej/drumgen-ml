@@ -1,5 +1,4 @@
-{
-  "data": [{
+{"data": [{
     "type": "articles",
     "id": "1",
     "attributes": {
@@ -13,5 +12,4 @@
         "data": {"id": "42", "type": "people"}
       }
     }
-  }]
-}
+  }]}

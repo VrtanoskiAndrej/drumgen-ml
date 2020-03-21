@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function NavItemBrand(props) {
   return (
     <div className="nav-item">
-      <a className="navbar-brand">
+      <Link className="navbar-brand" to="/">
         <img
           src="https://cdn.worldvectorlogo.com/logos/react.svg"
           width="30"
@@ -12,7 +13,7 @@ function NavItemBrand(props) {
           alt=""
         />
         {props.children}{' '}
-      </a>
+      </Link>
     </div>
   );
 }
